@@ -1,13 +1,15 @@
+# ADICIONE ESTA LINHA NO TOPO DO ARQUIVO
+from typing import List, Dict  # Importação obrigatória
+
 from openai import OpenAI
 from shared.config import Config
 from shared.logger import setup_logger
-from typing import Dict
 
 class InstagramContentCreator:
     def __init__(self):
         self.config = Config.load()
         self.logger = setup_logger('instagram_creator')
-        self.client = OpenAI(api_key="sua_chave_openai")
+        self.client = OpenAI(api_key='sua_chave_openai')
 
     def generate_post(self, trend: Dict) -> Dict:
         """Gera post otimizado para Instagram"""
@@ -26,5 +28,5 @@ class InstagramContentCreator:
             'cta': f"Link na bio! 👆 {self.config.get('monetization.affiliate_link')}"
         }
 
-    def _extract_hashtags(self, text: str) -> List[str]:
+    def _extract_hashtags(self, text: str) -> List[str]:  # Agora funcionará
         return [word[1:] for word in text.split() if word.startswith('#')]

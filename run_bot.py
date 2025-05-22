@@ -1,6 +1,7 @@
 import asyncio
 import argparse
 from datetime import datetime
+from typing import List, Dict
 from shared.config import Config
 from shared.logger import setup_logger
 from modules.detector.instagram_detector import InstagramDetector
