@@ -1,0 +1,1 @@
+{"timestamp": "2025-05-22T03:27:07.762969", "level": "ERROR", "module": "tiktok_detector", "message": "Failed to fetch trends: 'itemList'", "platform": "tiktok"}
